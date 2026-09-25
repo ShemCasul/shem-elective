@@ -14,48 +14,54 @@
             <div class="col">
                 <form action="register_process.php" method="post">
                     <div class="mb-3">
-                        <label class="Header">Register here</label>
+                        <div class="head">
+                            <label class="Header">Register here</label>
+                            <p class="sub">Fill in your details to create your account</p>
+                        </div>
 
-                        First Name:
-                        <input type="text" name="fname" class="form-control"><br>
-                        Last Name:
-                        <input type="text" name="lname" class="form-control"><br>
-                        E-mail:
-                        <input type="text" name="email" class="form-control"><br>
-s
-                        Password:
-                        <div class="input-group mb-3">
-                            <input type="password" name="password" id="password" class="form-control">
+                        <label for="fname">First Name:</label>
+                        <input type="text" id="fname" name="fname" class="form-control field">
+
+                        <label for="lname">Last Name:</label>
+                        <input type="text" id="lname" name="lname" class="form-control field">
+
+                        <label for="email">E-mail:</label>
+                        <input type="text" id="email" name="email" class="form-control field">
+
+                        <label for="password">Password:</label>
+                        <div class="input-group">
+                            <input type="password" name="password" id="password" class="form-control field">
                             <button class="btn btn-eye" type="button" id="togglePassword" aria-label="Show password">
                                 <i class="bi bi-eye" aria-hidden="true"></i>
                             </button>
                         </div>
 
-                        Confirm Password:
-                        <div class="input-group mb-3">
-                            <input type="password" name="cpassword" id="cpassword" class="form-control">
+                        <label for="cpassword">Confirm Password:</label>
+                        <div class="input-group">
+                            <input type="password" name="cpassword" id="cpassword" class="form-control field">
                             <button class="btn btn-eye" type="button" id="toggleCPassword" aria-label="Show password">
                                 <i class="bi bi-eye" aria-hidden="true"></i>
                             </button>
                         </div>
 
-                        Birthday:
-                        <input type="date" name="birthday" class="form-control"><br>
-                        Gender : <br><br>
-                        <input type="radio" id="male" name="gender" value="Male">
-                        Male
-                        <input type="radio" id="female" name="gender" value="Female">
-                        Female 
-                        <br><br>
+                        <label for="birthday">Birthday:</label>
+                        <input type="date" id="birthday" name="birthday" class="form-control field">
 
-                        Course:<br>
-                        <select name="course" class="form-select">
+                        <label>Gender:</label>
+                        <div class="gender">
+                            <input type="radio" id="male" name="gender" value="Male">
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" name="gender" value="Female">
+                            <label for="female">Female</label>
+                        </div>
+
+                        <label for="course">Course:</label>
+                        <select id="course" name="course" class="form-select field">
                             <option value="Bachelor of Information Technology">BSIT</option>
                             <option value="Bachelor of Education">BSED</option>
                             <option value="Bachelor of Science in Nursing">BSN</option>
                         </select>
-                        <br>
-                        <input type="submit">
+                        <input type="submit" class="submit-btn">
                     </div>
                 </form>
             </div>

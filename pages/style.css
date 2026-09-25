@@ -2,66 +2,82 @@ body {
   min-height: 100vh;
   margin: 0;
   background: #ffffff;
-  font-family: Arial, sans-serif;
-  color: #111827;
-}
-
-.container {
-  max-width: 620px;
+  color: #1f2937;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 form {
-  margin-top: 4rem;
-  padding: 2.75rem;
-  border-radius: 18px;
+  max-width: 470px;
+  margin: clamp(2rem, 8vh, 5rem) auto;
+  padding: 2.5rem 2.4rem;
   background: #ffffff;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+  border: 1px solid #edf0f4;
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(17, 24, 39, 0.08);
+}
+
+.head {
+  margin-bottom: 6px;
+}
+
+.Header {
+  margin: 0;
+  color: #111827;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+}
+
+.sub {
+  margin: 6px 0 0;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+.head::after {
+  content: "";
+  display: block;
+  width: 54px;
+  height: 4px;
+  margin-top: 16px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2d3efb, #8b97f7);
 }
 
 label {
   display: block;
-  margin-top: 16px;
+  margin-top: 18px;
+  font-size: 14px;
   font-weight: 600;
-  color: #374151;
-}
-
-.Header {
-  display: block;
-  margin-bottom: 8px;
-  padding-bottom: 14px;
-  color: #111827;
-  font-size: 34px;
-  font-weight: 800;
-  letter-spacing: -1px;
-  border-bottom: 3px solid #2d3efb;
+  color: #4b5563;
 }
 
 .field {
   width: 100%;
-  margin: 6px 0 0;
-  padding: 12px 14px;
-  border: 1px solid #d1d5db;
-  border-radius: 10px;
+  margin: 8px 0 0;
+  padding: 11px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
   box-sizing: border-box;
   background-color: #ffffff;
-  color: #111827;
-  font-size: 16px;
+  color: #1f2937;
+  font-size: 15px;
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .field:hover {
-  border-color: #9ca3af;
+  border-color: #c7cdd6;
 }
 
 .field:focus {
   border-color: #2d3efb;
-  box-shadow: 0 0 0 4px rgba(45, 62, 251, 0.15);
+  box-shadow: 0 0 0 4px rgba(45, 62, 251, 0.12);
 }
 
 .input-group {
-  margin-top: 6px;
+  margin-top: 8px;
   flex-wrap: nowrap;
 }
 
@@ -70,23 +86,23 @@ label {
   flex: 1 1 auto;
   min-width: 0;
   margin: 0;
-  border-radius: 10px 0 0 10px;
+  border-radius: 12px 0 0 12px;
 }
 
 .btn-eye {
-  padding: 12px 16px;
-  border: 1px solid #d1d5db;
+  padding: 11px 15px;
+  border: 1px solid #e5e7eb;
   border-left: none;
-  border-radius: 0 10px 10px 0;
-  background-color: #ffffff;
-  color: #374151;
-  font-size: 1.1rem;
+  border-radius: 0 12px 12px 0;
+  background-color: #f9fafb;
+  color: #6b7280;
+  font-size: 1.05rem;
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .btn-eye:hover {
-  background-color: #f3f4f6;
+  background-color: #eef2ff;
   color: #2d3efb;
 }
 
@@ -95,37 +111,65 @@ label {
 }
 
 .gender {
-  margin-top: 6px;
+  position: relative;
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .gender input {
-  accent-color: #2d3efb;
-  margin-right: 6px;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .gender label {
-  display: inline;
-  margin: 0 18px 0 0;
+  display: inline-block;
+  margin: 0;
+  padding: 8px 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #4b5563;
+  font-size: 14px;
   font-weight: 500;
   cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.gender label:hover {
+  border-color: #c7cdd6;
+}
+
+.gender input:checked + label {
+  border-color: #2d3efb;
+  background: #eef2ff;
+  color: #2d3efb;
+}
+
+.gender input:focus-visible + label {
+  box-shadow: 0 0 0 4px rgba(45, 62, 251, 0.15);
 }
 
 .submit-btn {
   width: 100%;
-  margin-top: 28px;
-  padding: 14px;
+  margin-top: 30px;
+  padding: 13px;
   border: none;
-  border-radius: 10px;
-  background-color: #2d3efb;
+  border-radius: 12px;
+  background: #2d3efb;
   color: #ffffff;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
+  letter-spacing: 0.2px;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 10px 22px rgba(45, 62, 251, 0.25);
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
 }
 
 .submit-btn:hover {
-  background-color: #1f2ef0;
+  background: #2534e0;
+  box-shadow: 0 12px 26px rgba(45, 62, 251, 0.3);
 }
 
 .submit-btn:active {
